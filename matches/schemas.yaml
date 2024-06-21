@@ -18,7 +18,7 @@ components:
           nullable: true
         gender:
           type: string
-          enum: ['男性', '女性', 'その他']
+          enum: ["男性", "女性", "その他"]
           nullable: true
         birthplace:
           type: string
@@ -41,3 +41,19 @@ components:
         updated_at:
           type: string
           format: date-time
+    MachingListResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          matching_id:
+            type: string
+            format: uuid
+          image_url:
+            type: string
+          user_name:
+            type: string
+          message:
+            type: string
+          unread_count:
+            type: number
