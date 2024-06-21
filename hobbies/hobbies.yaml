@@ -1,5 +1,41 @@
 paths:
   /hobbies:
+    get:
+      tags:
+        - Hobbies
+      summary: Get all hobbies with categories
+      responses:
+        "200":
+          description: List of all hobbies with categories
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  indoor:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                  games:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                  technicalHobbies:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                  sports:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                  outdoor:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                  music:
+                    type: array
+                    items:
+                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
     post:
       tags:
         - Hobbies
@@ -9,14 +45,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: './schemas.yaml#/components/schemas/HobbyPOSTRequest'
+              $ref: "./schemas.yaml#/components/schemas/HobbyPOSTRequest"
       responses:
-        '201':
+        "201":
           description: Hobby created
           content:
             application/json:
               schema:
-                $ref: './schemas.yaml#/components/schemas/HobbyResponse'
+                $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
   /hobbies/{hobby_id}:
     get:
       tags:
@@ -30,12 +66,12 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: このAPIは必要ないかも
           content:
             application/json:
               schema:
-                $ref: './schemas.yaml#/components/schemas/HobbyResponse'
+                $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
     put:
       tags:
         - Hobbies
@@ -52,14 +88,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: './schemas.yaml#/components/schemas/HobbyResponse'
+              $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
       responses:
-        '200':
+        "200":
           description: Hobby updated
           content:
             application/json:
               schema:
-                $ref: './schemas.yaml#/components/schemas/HobbyResponse'
+                $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
     delete:
       tags:
         - Hobbies
@@ -72,5 +108,5 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Hobby deleted
