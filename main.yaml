@@ -16,6 +16,8 @@ tags:
     description: マッチングに関する操作
   - name: Questions
     description: 2択の質問に関する操作
+  - name: Messages
+    description: メッセージに関する操作
 
 paths:
   /users:
@@ -36,3 +38,5 @@ paths:
     $ref: "./matches/matches.yaml#/paths/~1matches~1{matching_id}"
   /questions:
     $ref: "./questions/questions.yaml#/paths/~1questions"
+  /messages/{matching_id}:
+    $ref: "./messages/messages.yaml#/paths/~1messages~1{matching_id}"

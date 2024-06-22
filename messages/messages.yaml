@@ -1,0 +1,39 @@
+paths:
+  /messages/{matching_id}:
+    post:
+      tags:
+        - Messages
+      summary: Create a new message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./schemas.yaml#/components/schemas/PostNewMessageRequest"
+      responses:
+        "201":
+          description: 新しいメッセージが作成されました
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas.yaml#/components/schemas/PostNewMessageResponse"
+    get:
+      tags:
+        - Messages
+      summary: Get all messages by matching ID
+      parameters:
+        - name: matching_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: すべてのメッセージを取得
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./schemas.yaml#/components/schemas/Message"

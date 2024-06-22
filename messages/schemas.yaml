@@ -1,0 +1,31 @@
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        question_text:
+          type: string
+        answer1:
+          type: string
+        answer2:
+          type: string
+    PostNewMessageRequest:
+      type: object
+      properties:
+        matching_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        question_card_id:
+          type: string
+          format: uuid
+    PostNewMessageResponse:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        question_text:
+          type: string
