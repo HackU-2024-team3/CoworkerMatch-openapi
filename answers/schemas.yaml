@@ -3,7 +3,7 @@ components:
     MatchResponse:
       type: object
       properties:
-        match_id:
+        matching_id:
           type: string
           format: uuid
         sender_user_id:
@@ -23,4 +23,4 @@ components:
           format: uuid
         answer:
           type: string
-          example: 'choice1'
+          example: "choice1"

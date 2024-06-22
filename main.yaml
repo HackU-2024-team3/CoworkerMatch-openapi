@@ -7,17 +7,15 @@ servers:
     description: Local Server
 tags:
   - name: Users
-    description: ユーザに関するCRUD操作
+    description: ユーザに関する操作
   - name: Hobbies
-    description: 趣味に関するCRUD操作(これは現状作らなくていい)
+    description: 趣味に関する操作
   - name: UserHobbies
     description: ユーザの趣味に関する操作
   - name: Matches
     description: マッチングに関する操作
   - name: Questions
-    description: 質問に関する操作
-  - name: Answers
-    description: 回答に関する操作
+    description: 2択の質問に関する操作
 
 paths:
   /users:
@@ -26,8 +24,6 @@ paths:
     $ref: "./users/users.yaml#/paths/~1users~1{user_id}"
   /hobbies:
     $ref: "./hobbies/hobbies.yaml#/paths/~1hobbies"
-  /hobbies/{hobby_id}:
-    $ref: "./hobbies/hobbies.yaml#/paths/~1hobbies~1{hobby_id}"
   /user_hobbies:
     $ref: "./user_hobbies/user_hobbies.yaml#/paths/~1user_hobbies"
   /user_hobbies/{user_id}/{hobby_id}:
@@ -36,9 +32,7 @@ paths:
     $ref: "./user_hobbies/user_hobbies.yaml#/paths/~1user_hobbies~1{user_id}"
   /matches:
     $ref: "./matches/matches.yaml#/paths/~1matches"
-  /matches/{match_id}:
-    $ref: "./matches/matches.yaml#/paths/~1matches~1{match_id}"
+  /matches/{matching_id}:
+    $ref: "./matches/matches.yaml#/paths/~1matches~1{matching_id}"
   /questions:
     $ref: "./questions/questions.yaml#/paths/~1questions"
-  /answers:
-    $ref: "./answers/answers.yaml#/paths/~1answers"
