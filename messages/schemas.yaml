@@ -5,9 +5,9 @@ components:
       properties:
         question_text:
           type: string
-        answer1:
+        my_answer:
           type: string
-        answer2:
+        other_answer:
           type: string
     PostNewMessageRequest:
       type: object
