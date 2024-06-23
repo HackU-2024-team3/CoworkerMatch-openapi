@@ -45,4 +45,4 @@ components:
           format: uuid
         answer:
           type: string
-          example: "choice1"
+          example: "yes"

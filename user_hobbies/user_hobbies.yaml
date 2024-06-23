@@ -17,23 +17,7 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas.yaml#/components/schemas/UserHobbyResponse"
-    put:
-      tags:
-        - UserHobbies
-      summary: Updates user hobbies
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "./schemas.yaml#/components/schemas/UserHobbiesPOSTRequest"
-      responses:
-        "201":
-          description: ユーザの趣味を更新する
-          content:
-            application/json:
-              schema:
-                $ref: "./schemas.yaml#/components/schemas/UserHobbyResponse"
+
   /user_hobbies/{user_id}:
     get:
       tags:
@@ -55,3 +39,20 @@ paths:
                 type: array
                 items:
                   $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+    put:
+      tags:
+        - UserHobbies
+      summary: Updates user hobbies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./schemas.yaml#/components/schemas/UserHobbiesPOSTRequest"
+      responses:
+        "201":
+          description: ユーザの趣味を一括で更新する
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas.yaml#/components/schemas/UserHobbyResponse"
