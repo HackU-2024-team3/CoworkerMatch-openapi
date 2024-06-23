@@ -16,7 +16,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas.yaml#/components/schemas/UserResponse"
+                $ref: "./schemas.yaml#/components/schemas/PostUserResponse"
   /users/{user_id}:
     get:
       tags:
@@ -35,7 +35,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas.yaml#/components/schemas/UserResponse"
+                $ref: "./schemas.yaml#/components/schemas/GetUserResponse"
     put:
       tags:
         - Users
@@ -52,11 +52,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./schemas.yaml#/components/schemas/UserResponse"
+              $ref: "./schemas.yaml#/components/schemas/PutUserRequest"
       responses:
         "200":
           description: 2回目以降ユーザがログインしたときに、Googleのアカウントの名前などが変更されている場合に情報を更新する or 単純にline_accountなどを追加・更新する時に呼ばれる。
           content:
             application/json:
               schema:
-                $ref: "./schemas.yaml#/components/schemas/UserResponse"
+                $ref: "./schemas.yaml#/components/schemas/PutUserResponse"
