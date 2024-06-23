@@ -7,7 +7,11 @@ components:
           type: string
         my_answer:
           type: string
+        my_icon_url:
+          type: string
         other_answer:
+          type: string
+        other_icon_url:
           type: string
     PostNewMessageRequest:
       type: object

@@ -30,7 +30,7 @@ paths:
             format: uuid
       responses:
         "200":
-          description: すべてのメッセージを取得
+          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)
           content:
             application/json:
               schema:
