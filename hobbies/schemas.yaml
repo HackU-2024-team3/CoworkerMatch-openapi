@@ -3,9 +3,6 @@ components:
     HobbyResponse:
       type: object
       properties:
-        user_id:
-          type: string
-          format: uuid
         hobby_id:
           type: string
           format: uuid

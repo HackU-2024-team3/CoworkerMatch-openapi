@@ -31,7 +31,7 @@ paths:
       summary: Get user questions
       responses:
         "200":
-          description: 質問リストを返す。これはいったんユーザによらず固定の質問リスト。事前に決めた5個の2択質問を返す。
+          description: 質問リストを返す。これはいったんユーザによらず固定の質問リスト。事前に決めた5個の2択質問を返す。choice1のchoice_textはYES、choice2のchoice_textはNO。choice_image_urlはイラスト屋の画像URL(Figmaのマッチング回答画面/questionsを参照してください)
           content:
             application/json:
               schema:
