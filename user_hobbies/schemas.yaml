@@ -22,9 +22,6 @@ components:
     UserHobbiesPOSTRequest:
       type: object
       properties:
-        user_id:
-          type: string
-          format: uuid
         hobby_ids:
           type: array
           items:
