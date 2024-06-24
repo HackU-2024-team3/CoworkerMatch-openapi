@@ -9,14 +9,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./schemas.yaml#/components/schemas/HobbyPOSTRequest"
+              $ref: "./schemas.yaml#/components/schemas/PostHobbyRequest"
       responses:
         "201":
           description: ユーザが新しい趣味の提案をするときに呼び出される(優先度低い)
           content:
             application/json:
               schema:
-                $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                $ref: "./schemas.yaml#/components/schemas/PostHobbyResponse"
     get:
       tags:
         - Hobbies
@@ -30,26 +30,56 @@ paths:
                 type: object
                 properties:
                   indoor:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"
                   games:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"
                   technicalHobbies:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"
                   sports:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"
                   outdoor:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"
                   music:
-                    type: array
-                    items:
-                      $ref: "./schemas.yaml#/components/schemas/HobbyResponse"
+                    properties:
+                      category_id:
+                        type: string
+                        format: uuid
+                      hobbies:
+                        type: array
+                        items:
+                          $ref: "./schemas.yaml#/components/schemas/Hobby"

@@ -1,17 +1,35 @@
 components:
   schemas:
-    HobbyResponse:
+    PostHobbyResponse:
+      type: object
+      properties:
+        hobby:
+          properties:
+            hobby_id:
+              type: string
+              format: uuid
+            hobby_name:
+              type: string
+            category_id:
+              type: string
+              format: uuid
+            creator_id:
+              type: string
+            created_at:
+              type: string
+              format: date-time
+    PostHobbyRequest:
+      type: object
+      properties:
+        hobby_name:
+          type: string
+        category_id:
+          type: string
+          format: uuid
+    Hobby:
       type: object
       properties:
         hobby_id:
-          type: string
-          format: uuid
-        hobby_name:
-          type: string
-    HobbyPOSTRequest:
-      type: object
-      properties:
-        user_id:
           type: string
           format: uuid
         hobby_name:
