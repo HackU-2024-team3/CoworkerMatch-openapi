@@ -45,3 +45,25 @@ components:
           format: uuid
         question_text:
           type: string
+    PutMessageRequest:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        answer:
+          type: string
+    PutMessageResponse:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        answer:
+          type: string

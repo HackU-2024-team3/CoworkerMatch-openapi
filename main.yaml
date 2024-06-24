@@ -40,3 +40,5 @@ paths:
     $ref: "./question_cards/question_cards.yaml#/paths/~1question_cards~1{matching_id}"
   /messages/{matching_id}:
     $ref: "./messages/messages.yaml#/paths/~1messages~1{matching_id}"
+  /messages/{message_id}:
+    $ref: "./messages/messages.yaml#/paths/~1messages~1{message_id}"
