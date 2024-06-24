@@ -41,7 +41,7 @@ components:
         updated_at:
           type: string
           format: date-time
-    MachingListResponse:
+    MatchingListResponse:
       type: array
       items:
         type: object
@@ -49,11 +49,16 @@ components:
           matching_id:
             type: string
             format: uuid
-          image_url:
+          avatar_url:
+            type: string
+          user_id:
             type: string
           user_name:
             type: string
-          message:
+          last_message:
             type: string
+          last_message_time:
+            type: string
+            format: date-time
           unread_count:
             type: number
