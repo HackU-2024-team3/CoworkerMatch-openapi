@@ -25,7 +25,7 @@ components:
     MatchResponse:
       type: object
       properties:
-        matching_id:
+        match_id:
           type: string
           format: uuid
         sender_user_id:

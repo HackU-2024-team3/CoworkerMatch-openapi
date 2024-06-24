@@ -1,8 +1,8 @@
 paths:
-  /questions:
+  /matching_questions:
     post:
       tags:
-        - Questions
+        - MatchingQuestions
       summary: Create a new matching
       requestBody:
         required: true
@@ -11,9 +11,6 @@ paths:
             schema:
               type: object
               properties:
-                user_id:
-                  type: string
-                  format: uuid
                 answers:
                   type: array
                   items:
@@ -27,11 +24,11 @@ paths:
                 $ref: "./schemas.yaml#/components/schemas/MatchResponse"
     get:
       tags:
-        - Questions
+        - MatchingQuestions
       summary: Get user questions
       responses:
         "200":
-          description: 質問リストを返す。これはいったんユーザによらず固定の質問リスト。事前に決めた5個の2択質問を返す。choice1のchoice_textはYES、choice2のchoice_textはNO。choice_image_urlはイラスト屋の画像URL(Figmaのマッチング回答画面/questionsを参照してください)
+          description: 質問リストを返す。これはいったんユーザによらず固定の質問リスト。事前に決めた5個の2択質問を返す。choice1のchoice_textはYES、choice2のchoice_textはNO。choice_image_urlはイラスト屋の画像URL, フロントで管理(Figmaのマッチング回答画面/questionsを参照してください)
           content:
             application/json:
               schema:

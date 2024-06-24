@@ -14,7 +14,7 @@ tags:
     description: ユーザの趣味に関する操作
   - name: Matches
     description: マッチングに関する操作
-  - name: Questions
+  - name: MatchingQuestions
     description: 2択の質問に関する操作
   - name: QuestionCards
     description: 質問カードに関する操作
@@ -34,8 +34,8 @@ paths:
     $ref: "./user_hobbies/user_hobbies.yaml#/paths/~1user_hobbies~1{user_id}"
   /matches:
     $ref: "./matches/matches.yaml#/paths/~1matches"
-  /questions:
-    $ref: "./questions/questions.yaml#/paths/~1questions"
+  /matching_questions:
+    $ref: "./matching_questions/matching_questions.yaml#/paths/~1matching_questions"
   /question_cards/{matching_id}:
     $ref: "./question_cards/question_cards.yaml#/paths/~1question_cards~1{matching_id}"
   /messages/{matching_id}:
