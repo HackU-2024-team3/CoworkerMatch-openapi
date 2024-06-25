@@ -1,5 +1,5 @@
 paths:
-  /messages/{matching_id}:
+  /messages:
     post:
       tags:
         - Messages
@@ -23,14 +23,14 @@ paths:
       summary: Get all messages by matching ID
       parameters:
         - name: matching_id
-          in: path
+          in: query
           required: true
           schema:
             type: string
             format: uuid
       responses:
         "200":
-          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)
+          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)。me, you について、データが存在しない場合は null で返ってくる
           content:
             application/json:
               schema:
