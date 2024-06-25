@@ -22,3 +22,27 @@ components:
               type: string
             choice_image_url:
               type: string
+    MatchResponse:
+      type: object
+      properties:
+        match_id:
+          type: string
+          format: uuid
+        sender_user_id:
+          type: string
+          format: uuid
+        receiver_user_id:
+          type: string
+          format: uuid
+        match_date:
+          type: string
+          format: date-time
+    AnswerPOSTRequest:
+      type: object
+      properties:
+        question_id:
+          type: string
+          format: uuid
+        answer:
+          type: string
+          example: "yes"

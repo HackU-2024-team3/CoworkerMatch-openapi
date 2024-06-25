@@ -10,14 +10,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas.yaml#/components/schemas/MachingListResponse"
-  /matches/{match_id}:
+                $ref: "./schemas.yaml#/components/schemas/MatchingListResponse"
+  /matches/{matching_id}:
     get:
       tags:
         - Matches
       summary: Get a match by ID
       parameters:
-        - name: match_id
+        - name: matching_id
           in: path
           required: true
           schema:

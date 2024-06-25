@@ -1,0 +1,78 @@
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        question_id:
+          type: string
+          format: uuid
+        question_text:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        message_pair:
+          type: object
+          properties:
+            me:
+              type: object
+              $ref: "#/components/schemas/MessageDetail"
+            you:
+              type: object
+              $ref: "#/components/schemas/MessageDetail"
+    MessageDetail:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        message_text:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    MessageResponse:
+      type: object
+      properties:
+        match_user:
+          type: object
+          properties:
+            user_id:
+              type: string
+            user_name:
+              type: string
+            avatar_url:
+              type: string
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Message"
+    PostNewMessageRequest:
+      type: object
+      properties:
+        matching_id:
+          type: string
+          format: uuid
+        question_card_id:
+          type: string
+          format: uuid
+    PostNewMessageResponse:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+    PutMessageRequest:
+      type: object
+      properties:
+        answer:
+          type: string
+    PutMessageResponse:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid

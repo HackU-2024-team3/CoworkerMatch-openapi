@@ -1,0 +1,62 @@
+paths:
+  /messages:
+    post:
+      tags:
+        - Messages
+      summary: Create a new message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./schemas.yaml#/components/schemas/PostNewMessageRequest"
+      responses:
+        "201":
+          description: 新しいメッセージが作成されました
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas.yaml#/components/schemas/PostNewMessageResponse"
+    get:
+      tags:
+        - Messages
+      summary: Get all messages by matching ID
+      parameters:
+        - name: matching_id
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)。me, you について、データが存在しない場合は null で返ってくる
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas.yaml#/components/schemas/MessageResponse"
+  /messages/{message_id}:
+    put:
+      tags:
+        - Messages
+      summary: Update a message
+      parameters:
+        - name: message_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./schemas.yaml#/components/schemas/PutMessageRequest"
+      responses:
+        "200":
+          description: post /messages/{matching_id}で作成されたメッセージの自分の回答を記入するためのAPI。
+          content:
+            application/json:
+              schema:
+                $ref: "./schemas.yaml#/components/schemas/PutMessageResponse"
