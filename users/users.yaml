@@ -60,3 +60,18 @@ paths:
             application/json:
               schema:
                 $ref: "./schemas.yaml#/components/schemas/PutUserResponse"
+  /users/exists:
+    get:
+      tags:
+        - Users
+      summary: Check if a user exists by email
+      responses:
+        "200":
+          description: ユーザが存在するかどうかを確認
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exists:
+                    type: boolean

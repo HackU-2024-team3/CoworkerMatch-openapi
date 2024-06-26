@@ -26,6 +26,8 @@ paths:
     $ref: "./users/users.yaml#/paths/~1users"
   /users/{user_id}:
     $ref: "./users/users.yaml#/paths/~1users~1{user_id}"
+  /users/exists:
+    $ref: "./users/users.yaml#/paths/~1users~1exists"
   /hobbies:
     $ref: "./hobbies/hobbies.yaml#/paths/~1hobbies"
   /user_hobbies:

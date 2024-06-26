@@ -30,7 +30,7 @@ paths:
             format: uuid
       responses:
         "200":
-          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)。me, you について、データが存在しない場合は null で返ってくる
+          description: すべてのメッセージを取得(時系列順に並べる。一番古いメッセージが一番上にくるようにしたい。配列のindex0が一番古いメッセージ)。me, you について、データが存在しない場合は null で返ってくる。is_read は、自分が送信したメッセージに対しては true になる。
           content:
             application/json:
               schema:
